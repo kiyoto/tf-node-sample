@@ -1,0 +1,16 @@
+name: deploy-tf
+on: [push]
+jobs:
+  deploy-tf-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: webpack
+      - run: npm install axios
+      - run: node upload_code.js
+        env:
+          TD_API_KEY: ${{ secrets.TD_API_KEY }}

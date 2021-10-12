@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "clean": "rm -rf dist tmp",
+    "main": "node --enable-source-maps main.js"
+  },
+  "license": "Apache 2.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.22.0"
+  }
+}
